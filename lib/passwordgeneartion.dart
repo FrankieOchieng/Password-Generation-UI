@@ -94,8 +94,8 @@ class _PasswordgenerationState extends State<Passwordgeneration> {
               ElevatedButton.icon(
                 icon: const Icon(Icons.key_outlined),
                 iconAlignment: IconAlignment.start,
-                style: const ButtonStyle(
-                    foregroundColor: WidgetStatePropertyAll(Colors.orange),
+                style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all(Colors.orange),
                     maximumSize:
                         WidgetStatePropertyAll(Size(double.infinity, 45))),
                 onPressed: generatepass,
