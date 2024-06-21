@@ -47,13 +47,10 @@ class _PasswordgenerationState extends State<Passwordgeneration> {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.blueGrey,
-        title: Title(
-          color: Colors.black,
-          child: const Text(
-            'Generated Random Password',
-            style: TextStyle(
-                color: Colors.black, fontWeight: FontWeight.w400, fontSize: 24),
-          ),
+        title: const Text(
+          'Generated Random Password',
+          style: TextStyle(
+              color: Colors.black, fontWeight: FontWeight.w400, fontSize: 24),
         ),
       ),
       body: Center(
@@ -62,28 +59,38 @@ class _PasswordgenerationState extends State<Passwordgeneration> {
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              Text(
-                password,
-                style:
-                    const TextStyle(fontSize: 28, fontWeight: FontWeight.w400),
+              //Main widget @ the top Centre of the screaan
+              Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Text(
+                    password,
+                    style: const TextStyle(
+                        fontSize: 28, fontWeight: FontWeight.w400),
+                  ),
+                  IconButton(
+                      onPressed: () {
+                        Clipboard.setData(ClipboardData(text: password));
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          const SnackBar(
+                            backgroundColor: Colors.black,
+                            content: Text(
+                              'Copied to clipboard!',
+                              style:
+                                  TextStyle(color: Colors.white, fontSize: 12),
+                            ),
+                          ),
+                        );
+                      },
+                      icon: const Icon(Icons.copy)),
+                ],
               ),
-              IconButton(
-                  onPressed: () {
-                    Clipboard.setData(ClipboardData(text: password));
-                    ScaffoldMessenger.of(context).showSnackBar(
-                      const SnackBar(
-                        backgroundColor: Colors.black,
-                        content: Text(
-                          'Copied to clipboard!',
-                          style: TextStyle(color: Colors.white, fontSize: 12),
-                        ),
-                      ),
-                    );
-                  },
-                  icon: const Icon(Icons.copy)),
+              //Space between the first widget and the second widget.
               const SizedBox(
                 height: 15,
               ),
+
+              //The Button widget at the bottom
               ElevatedButton.icon(
                 icon: const Icon(Icons.key_outlined),
                 iconAlignment: IconAlignment.start,

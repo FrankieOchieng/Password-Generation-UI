@@ -10,8 +10,9 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Implement ==
+    //Implement
     return const MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Passwordgeneration(),
     );
   }
