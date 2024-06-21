@@ -95,9 +95,9 @@ class _PasswordgenerationState extends State<Passwordgeneration> {
                 icon: const Icon(Icons.key_outlined),
                 iconAlignment: IconAlignment.start,
                 style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all(Colors.orange),
-                    maximumSize:
-                        WidgetStatePropertyAll(Size(double.infinity, 45))),
+                    foregroundColor: WidgetStateProperty.all(Colors.orange),
+                    maximumSize: WidgetStateProperty.all(
+                        const Size(double.infinity, 45))),
                 onPressed: generatepass,
                 label: const Text(
                   'Generate password',
